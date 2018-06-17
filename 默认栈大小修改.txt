@@ -1,0 +1,9 @@
+参考博客：https://blog.csdn.net/zgrjkflmkyc/article/details/41518425
+         https://blog.csdn.net/u012839837/article/details/53704642
+         
+Windows平台下：
+以VS2015为例：项目->属性->链接器->堆栈保留大小->2097152 （备注2*1024*1024=2M=2097152）
+
+Linux平台下：
+ulimit -a：显示当前栈大小
+ulimit -s 2048（备注2*1024=2M=2048）
