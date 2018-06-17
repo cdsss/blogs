@@ -1,0 +1,17 @@
+参考博客：https://www.cnblogs.com/chenwenbiao/archive/2011/11/04/2236679.html
+
+malloc:
+char **a, i;
+// 先分配m个指针单元，注意是指针单元
+// 所以每个单元的大小是sizeof(char *)
+a = (char **) malloc(m * sizeof(char * ));
+// 再分配n个字符单元，
+// 上面的m个指针单元指向这n个字符单元首地址
+for(i = 0; i < m; i++)
+a[i] = (char * )malloc(n * sizeof(char ));
+
+free:
+int i;
+for(i=0;i<m;i++)
+    free((void *)a[i]);
+free((void *)a);
